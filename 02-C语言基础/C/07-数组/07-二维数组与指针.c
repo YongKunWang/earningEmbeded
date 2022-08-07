@@ -11,6 +11,9 @@ int main( )
 
 	printf("a = %p, a + 1 = %p\n", a, a + 1);
 	printf("a[0] = %p, a[0] + 1 = %p\n", a[0], a[0] + 1);
+	
+	printf("%p\t%p\t%d\n",a+1,*(a+1), *(*(a+1)));
+
 
 	return 0;
 }
