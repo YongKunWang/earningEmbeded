@@ -88,8 +88,7 @@ Status InsertSqList(SqList &L, int i, ElemType e)
 		L.listSize += L.increamSize;
 	}
 	
-	for(int j = L.length; j > i;
-	j --)
+	for(int j = L.length; j > i; j--)
 		L.elem[j] = L.elem[j - 1];
 
 	L.elem[i] = e;
