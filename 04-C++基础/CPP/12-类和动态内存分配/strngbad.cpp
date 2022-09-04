@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cstring>
+#include "strngbad.h"
+
+using std::cout;
+using std::cout;
+
+int StringBad::num_strings = 0;
+
+StringBad::StringBad(const char * s)
+{ 
+	len = strlen(s);
+	str = new char[len + 1];
+	
+	std::strcpy(str, s);
+
+	num_strings ++;
+
+	cout << num_strings << ": \"" << str << "\" object created\n";
+}
+
+StringBad::StringBad()
+{ 
+	len = 3;
+	str = new char[len+1];
+	std::strcpy(str, "C++");
+	num_strings ++;
+	
+	cout << num_strings << ": \"" << str << "\" object created\n";
+}
+
+StringBad::~StringBad()
+{ 
+	cout << "\"" << str << "\" object deleted\n";
+	-- num_strings;
+	cout << num_strings << " left\n";
+	delete [] str;
+}
+
+std::ostream & operator<<(std::ostream & os, const StringBad &st)
+{ 
+	os << st.str;
+	return os;
+}
+
+
+
